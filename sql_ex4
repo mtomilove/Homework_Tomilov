@@ -3,7 +3,7 @@
 SELECT classroom
 FROM Schedule
 GROUP BY classroom
-HAVING COUNT(classroom) = (SELECT COUNT(classroom) as count 
+HAVING COUNT(classroom) = (SELECT COUNT(classroom) as count  -- Вложенный select отбирает наибольшее кол-во классов посредством выбора первого отсортированного элемента
                            FROM Schedule
                            GROUP BY classroom
                            ORDER BY classroom DESC 
